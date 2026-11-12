@@ -1,0 +1,94 @@
+# BASE DE INTERAÇÕES: Cyberpunk: Edgerunners, temporada 1 (Netflix, 10 episódios)
+#
+# ESQUEMA DO REGISTRO (campos separados por um espaço em branco)
+#   personagem1 personagem2 sinal ambiente episodio minuto
+#   A linha logo abaixo de cada registro, iniciada por #, traz a descrição breve do evento,
+#   que também serve de justificativa do sinal.
+#   Rede não direcionada: a ordem de personagem1 e personagem2 não tem significado.
+#
+# CRITÉRIOS
+#   Interação: conversa, ação dirigida ao outro (incluindo conflitos) ou ação conjunta em que os
+#   dois agem juntos por um mesmo objetivo. Chamada em que os dois se respondem conta como
+#   interação direta. Interação indireta não entra. Se uma pessoa dá uma ordem a vários e só um
+#   responde, é um registro.
+#   Início e fim: a cada mudança de cena ou de ambiente; quando um dos personagens sai da cena, a
+#   interação termina.
+#   Conversa prolongada: um registro por cena, mesmo com várias falas.
+#   Eventos distintos: cenas diferentes do mesmo par geram registros separados. Se a mesma cena
+#   muda de sinal, são dois registros do mesmo par e ambiente, com minutos diferentes.
+#   Sinal, pelo efeito da ação sobre o outro personagem, de forma óbvia:
+#     +  a ação ajuda o outro
+#     -  a ação prejudica o outro (agressão é negativa mesmo que a vítima merecesse)
+#     0  interação direta que não ajuda nem prejudica de forma clara
+#   Sinal incerto: o caso fica de fora das análises de sinal.
+#   Identificadores: NomeSobrenome, sem acento, espaço ou símbolo. Personagem sem nome recebe um
+#   ID descritivo (ex.: DiretorAcademia).
+#
+# DICIONÁRIO DE PERSONAGENS
+#   formato: # PERSONAGEM id | nome_canonico | apelidos (separados por ;) | primeira_aparicao
+# PERSONAGEM CyberpsicopataEp1 | Cyberpsicopata do episódio 1 |  | E01 00:32
+# PERSONAGEM SegurancaArasaka | Segurança da Arasaka |  | E01 00:32
+# PERSONAGEM MaxTac | MAX-TAC |  | E01 02:06
+# PERSONAGEM DavidMartinez | David Martinez | David | E01 03:15
+# PERSONAGEM Ripperdoc | Ripperdoc | Doutor | E01 03:15
+# PERSONAGEM GloriaMartinez | Gloria Martinez | Gloria;Mãe do David | E01 04:11
+# PERSONAGEM Maine | Maine |  | E01 05:36
+# PERSONAGEM Katsuo | Katsuo |  | E01 08:57
+# PERSONAGEM DiretorAcademia | Diretor da Academia Arasaka |  | E01 09:16
+# PERSONAGEM EquipeMedicaPrivada | Equipe médica privada |  | E01 13:00
+# PERSONAGEM MedicoHospital | Médico do hospital |  | E01 13:47
+# PERSONAGEM LucynaKushinada | Lucyna Kushinada | Lucy;Lucyna;Kushinada | 
+# PERSONAGEM Dorio | Dorio |  | 
+# PERSONAGEM Pilar | Pilar |  | 
+# PERSONAGEM Rebecca | Rebecca |  | 
+# PERSONAGEM Kiwi | Kiwi |  | 
+# PERSONAGEM Falco | Falco |  | 
+# PERSONAGEM AdamSmasher | Adam Smasher | Smasher;Adam | 
+# PERSONAGEM Faraday | Faraday |  | 
+
+# ===== EPISÓDIO 1 =====
+
+CyberpsicopataEp1 SegurancaArasaka - PatioArasaka E01 00:32
+# Cyberpsicopata ataca a segurança no pátio
+
+MaxTac CyberpsicopataEp1 - PatioArasaka E01 02:06
+# MAX-TAC elimina o cyberpsicopata
+
+DavidMartinez Ripperdoc + ApartamentoDavid E01 03:15
+# Conversa de negócios por chamada sobre o chip; Ripperdoc faz uma boa com os chips pirateados
+
+DavidMartinez GloriaMartinez 0 ApartamentoDavid E01 04:11
+# David e Gloria conversam, antes do noticiário, sobre dinheiro para liberar a máquina de lavar, sem ajuda nem prejuízo claro
+
+GloriaMartinez Maine + ApartamentoDavid E01 05:36
+# Gloria negocia com Maine a venda de um item proibido (o Sandevistan), depois que David sai da sala
+
+Katsuo DavidMartinez - AcademiaArasaka E01 08:57
+# Katsuo xinga David depois que ele queima os equipamentos da aula
+
+GloriaMartinez DiretorAcademia - AcademiaArasaka E01 09:16
+# Gloria e o diretor discutem por causa da dívida
+
+EquipeMedicaPrivada DavidMartinez - Rodovia E01 13:00
+# Equipe médica privada deixa David sem atendimento na rodovia
+
+MedicoHospital DavidMartinez - Hospital E01 13:47
+# Médico informa a David o coma da mãe e a dívida
+
+DavidMartinez Ripperdoc - ApartamentoDavid E01 14:42
+# David contata Ripperdoc para vender o Sandevistan que encontrou, e ele oferece menos do que antes
+
+Katsuo DavidMartinez - CentroDaCidade E01 16:15
+# Katsuo intimida David e o agride, David não consegue se defender
+
+MedicoHospital DavidMartinez - Hospital E01 18:54
+# Médico informa a David a morte de Gloria
+
+DavidMartinez Ripperdoc - ApartamentoDavid E01 20:50
+# David liga de novo outro dia para vender o Sandevistan, e Ripperdoc não faz uma boa oferta
+
+Katsuo DavidMartinez - ApartamentoDavid E01 21:23
+# Katsuo liga para David e, de forma hostil, sugere que saia da Academia
+
+DavidMartinez Ripperdoc + OficinaRipperdoc E01 22:03
+# David leva o Sandevistan à oficina de Ripperdoc para instalar e ganha mais poder
