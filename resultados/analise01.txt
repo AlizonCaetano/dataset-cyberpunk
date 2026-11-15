@@ -1,0 +1,11 @@
+ANALISE 1. Caracterizacao geral da rede
+registros: 203
+vertices: 40
+arestas: 84
+par com mais cenas: DavidMartinez e LucynaKushinada (22 cenas)
+densidade: 0.108
+grau medio: 4.2
+agrupamento medio: 0.464
+componentes conexos: 1
+diametro: 6
+caminho medio: 2.33
