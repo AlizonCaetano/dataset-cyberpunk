@@ -2,8 +2,6 @@
 #
 # ESQUEMA DO REGISTRO (campos separados por um espaço em branco)
 #   personagem1 personagem2 sinal ambiente episodio minuto
-#   A linha logo abaixo de cada registro, iniciada por #, traz a descrição breve do evento,
-#   que também serve de justificativa do sinal.
 #   Rede não direcionada: a ordem de personagem1 e personagem2 não tem significado.
 #
 # CRITÉRIOS
@@ -16,11 +14,16 @@
 #   Conversa prolongada: um registro por cena, mesmo com várias falas.
 #   Eventos distintos: cenas diferentes do mesmo par geram registros separados. Se a mesma cena
 #   muda de sinal, são dois registros do mesmo par e ambiente, com minutos diferentes.
-#   Sinal, pelo efeito da ação sobre o outro personagem, de forma óbvia:
-#     +  a ação ajuda o outro
-#     -  a ação prejudica o outro (agressão é negativa mesmo que a vítima merecesse)
-#     0  interação direta que não ajuda nem prejudica de forma clara
+#   Sinal, pelo resultado da interação para a equipe do David:
+#     +  a equipe ganha ou vence o confronto
+#     -  a equipe perde ou sai prejudicada
+#     sem ninguém da equipe na cena, vale o resultado da ação (agressão -, ajuda +)
+#     0  interação direta sem ganho nem perda clara
 #   Sinal incerto: o caso fica de fora das análises de sinal.
+#     Nenhum caso de sinal incerto apareceu na coleta.
+#   Grupo sem nome que age junto (tiras, exército, inimigos de um confronto) vira um único ID.
+#   Ambiente não identificável na cena: LocalNaoIdentificado.
+#   Cena sem minuto confiável não entra na base.
 #   Identificadores: NomeSobrenome, sem acento, espaço ou símbolo. Personagem sem nome recebe um
 #   ID descritivo (ex.: DiretorAcademia).
 #
@@ -33,62 +36,462 @@
 # PERSONAGEM Ripperdoc | Ripperdoc | Doutor | E01 03:15
 # PERSONAGEM GloriaMartinez | Gloria Martinez | Gloria;Mãe do David | E01 04:11
 # PERSONAGEM Maine | Maine |  | E01 05:36
-# PERSONAGEM Katsuo | Katsuo |  | E01 08:57
+# PERSONAGEM Katsuo | Katsuo Tanaka | Katsuo;Katsu | E01 08:57
 # PERSONAGEM DiretorAcademia | Diretor da Academia Arasaka |  | E01 09:16
 # PERSONAGEM EquipeMedicaPrivada | Equipe médica privada |  | E01 13:00
 # PERSONAGEM MedicoHospital | Médico do hospital |  | E01 13:47
-# PERSONAGEM LucynaKushinada | Lucyna Kushinada | Lucy;Lucyna;Kushinada | 
-# PERSONAGEM Dorio | Dorio |  | 
-# PERSONAGEM Pilar | Pilar |  | 
-# PERSONAGEM Rebecca | Rebecca |  | 
-# PERSONAGEM Kiwi | Kiwi |  | 
-# PERSONAGEM Falco | Falco |  | 
-# PERSONAGEM AdamSmasher | Adam Smasher | Smasher;Adam | 
-# PERSONAGEM Faraday | Faraday |  | 
+# PERSONAGEM LucynaKushinada | Lucyna Kushinada | Lucy;Lucyna;Kushinada | E02 07:36
+# PERSONAGEM ParamedicosCorruptos | Paramédicos corruptos da ambulância |  | E02 11:03
+# PERSONAGEM Dorio | Dorio |  | E03 08:19
+# PERSONAGEM Pilar | Pilar |  | E03 08:19
+# PERSONAGEM Kiwi | Kiwi |  | E03 08:19
+# PERSONAGEM Maxim | Maxim |  | E03 10:00
+# PERSONAGEM Rebecca | Rebecca |  | E03 10:40
+# PERSONAGEM Assassino | Assassino que persegue David e Lucy |  | E03 16:28
+# PERSONAGEM Faraday | Faraday |  | E03 18:44
+# PERSONAGEM Aldo | Aldo |  | E04 03:51
+# PERSONAGEM InimigosAssalto | Inimigos do assalto na clínica |  | E04 07:39
+# PERSONAGEM Desconhecido | Desconhecido armado que mata Pilar |  | E04 15:10
+# PERSONAGEM JK | JK |  | E05 07:16
+# PERSONAGEM DronesArmados | Drones armados |  | E05 14:48
+# PERSONAGEM SrTanaka | Sr. Tanaka |  | E05 19:02
+# PERSONAGEM Falco | Falco |  | E06 03:54
+# PERSONAGEM Tiras | Tiras (polícia) |  | E06 16:05
+# PERSONAGEM EquipeMedicaMilitar | Equipe médica militar |  | E06 16:05
+# PERSONAGEM Julio | Julio |  | E07 00:54
+# PERSONAGEM InimigosGangue | Inimigos da gangue rival |  | E07 03:14
+# PERSONAGEM ChefeGangue | Chefe da gangue rival |  | E07 05:26
+# PERSONAGEM Sequestrado | Pessoa sequestrada resgatada por David |  | E07 06:28
+# PERSONAGEM Wakako | Wakako |  | E07 06:28
+# PERSONAGEM Militech | Representante da Militech |  | E08 06:08
+# PERSONAGEM InimigosCampoAberto | Inimigos do confronto em campo aberto |  | E08 11:23
+# PERSONAGEM ExercitoMilitech | Exército da Militech |  | E09 20:34
+# PERSONAGEM AdamSmasher | Adam Smasher | Smasher;Adam | E10 14:06
+# PERSONAGEM OficialArasaka | Oficial de alto escalão da Arasaka |  | E10 14:06
+# PERSONAGEM AgentesArasaka | Agentes da Arasaka |  | E10 14:35
 
 # ===== EPISÓDIO 1 =====
 
 CyberpsicopataEp1 SegurancaArasaka - PatioArasaka E01 00:32
-# Cyberpsicopata ataca a segurança no pátio
 
 MaxTac CyberpsicopataEp1 - PatioArasaka E01 02:06
-# MAX-TAC elimina o cyberpsicopata
 
 DavidMartinez Ripperdoc + ApartamentoDavid E01 03:15
-# Conversa de negócios por chamada sobre o chip; Ripperdoc faz uma boa com os chips pirateados
 
 DavidMartinez GloriaMartinez 0 ApartamentoDavid E01 04:11
-# David e Gloria conversam, antes do noticiário, sobre dinheiro para liberar a máquina de lavar, sem ajuda nem prejuízo claro
 
 GloriaMartinez Maine + ApartamentoDavid E01 05:36
-# Gloria negocia com Maine a venda de um item proibido (o Sandevistan), depois que David sai da sala
 
 Katsuo DavidMartinez - AcademiaArasaka E01 08:57
-# Katsuo xinga David depois que ele queima os equipamentos da aula
 
 GloriaMartinez DiretorAcademia - AcademiaArasaka E01 09:16
-# Gloria e o diretor discutem por causa da dívida
 
 EquipeMedicaPrivada DavidMartinez - Rodovia E01 13:00
-# Equipe médica privada deixa David sem atendimento na rodovia
 
 MedicoHospital DavidMartinez - Hospital E01 13:47
-# Médico informa a David o coma da mãe e a dívida
 
 DavidMartinez Ripperdoc - ApartamentoDavid E01 14:42
-# David contata Ripperdoc para vender o Sandevistan que encontrou, e ele oferece menos do que antes
 
-Katsuo DavidMartinez - CentroDaCidade E01 16:15
-# Katsuo intimida David e o agride, David não consegue se defender
+Katsuo DavidMartinez - Rua E01 16:15
 
 MedicoHospital DavidMartinez - Hospital E01 18:54
-# Médico informa a David a morte de Gloria
 
 DavidMartinez Ripperdoc - ApartamentoDavid E01 20:50
-# David liga de novo outro dia para vender o Sandevistan, e Ripperdoc não faz uma boa oferta
 
 Katsuo DavidMartinez - ApartamentoDavid E01 21:23
-# Katsuo liga para David e, de forma hostil, sugere que saia da Academia
 
-DavidMartinez Ripperdoc + OficinaRipperdoc E01 22:03
-# David leva o Sandevistan à oficina de Ripperdoc para instalar e ganha mais poder
+DavidMartinez Ripperdoc + OficinaRipperDoc E01 22:03
+
+# ===== EPISÓDIO 2 =====
+
+DavidMartinez Ripperdoc + OficinaRipperDoc E02 00:10
+
+DavidMartinez Katsuo + AcademiaArasaka E02 02:56
+
+DavidMartinez LucynaKushinada + Trem E02 07:36
+
+LucynaKushinada DavidMartinez + Ambulancia E02 11:03
+
+ParamedicosCorruptos DavidMartinez - Ambulancia E02 11:03
+
+LucynaKushinada DavidMartinez + Rua E02 12:23
+
+LucynaKushinada DavidMartinez - ApartamentoLucy E02 21:59
+
+Maine DavidMartinez - ApartamentoLucy E02 21:59
+
+# ===== EPISÓDIO 3 =====
+
+Maine DavidMartinez - ApartamentoLucy E03 02:49
+
+Maine DavidMartinez + Galpao E03 08:19
+
+Kiwi DavidMartinez + Galpao E03 08:19
+
+Dorio DavidMartinez + Galpao E03 08:19
+
+Pilar DavidMartinez + Galpao E03 08:19
+
+Dorio DavidMartinez + Bar E03 10:00
+
+Maxim DavidMartinez + Bar E03 10:00
+
+Rebecca Maxim + Bar E03 10:40
+
+DavidMartinez LucynaKushinada + Rua E03 12:20
+
+Assassino DavidMartinez - PatioGalpao E03 16:28
+
+Assassino LucynaKushinada - PatioGalpao E03 16:28
+
+Maine DavidMartinez + PatioGalpao E03 16:28
+
+Maine LucynaKushinada + PatioGalpao E03 16:28
+
+Maine Assassino + PatioGalpao E03 16:28
+
+Maine DavidMartinez + Rua E03 17:08
+
+Faraday Maine - Rua E03 18:44
+
+Maine DavidMartinez + Rua E03 20:26
+
+# ===== EPISÓDIO 4 =====
+
+Maine Dorio 0 Bar E04 02:43
+
+DavidMartinez Maine + ApartamentoDavid E04 03:23
+
+DavidMartinez Aldo + PatioEscondido E04 03:51
+
+DavidMartinez Pilar + ApartamentoPilarRebecca E04 05:14
+
+DavidMartinez Rebecca + ApartamentoPilarRebecca E04 05:14
+
+LucynaKushinada DavidMartinez + Rua E04 07:11
+
+Maine DavidMartinez + Rua E04 07:25
+
+DavidMartinez Kiwi + ClinicaAssalto E04 07:39
+
+DavidMartinez Rebecca + ClinicaAssalto E04 07:39
+
+DavidMartinez Pilar + ClinicaAssalto E04 07:39
+
+Kiwi Rebecca + ClinicaAssalto E04 07:39
+
+Kiwi Pilar + ClinicaAssalto E04 07:39
+
+Rebecca Pilar + ClinicaAssalto E04 07:39
+
+DavidMartinez InimigosAssalto + ClinicaAssalto E04 07:39
+
+Kiwi InimigosAssalto + ClinicaAssalto E04 07:39
+
+Rebecca InimigosAssalto + ClinicaAssalto E04 07:39
+
+Pilar InimigosAssalto + ClinicaAssalto E04 07:39
+
+DavidMartinez Rebecca + Bar E04 08:32
+
+Pilar Desconhecido - Rua E04 15:10
+
+Desconhecido Pilar - Rua E04 15:52
+
+Desconhecido DavidMartinez - Rua E04 16:42
+
+Maine DavidMartinez + Rua E04 16:42
+
+Rebecca Desconhecido - Rua E04 16:42
+
+Kiwi Rebecca + Rua E04 16:42
+
+LucynaKushinada Desconhecido - Rua E04 16:42
+
+DavidMartinez LucynaKushinada + Rua E04 16:42
+
+DavidMartinez Desconhecido + Rua E04 17:52
+
+DavidMartinez LucynaKushinada + Rua E04 17:52
+
+DavidMartinez LucynaKushinada + OficinaRipperDoc E04 19:13
+
+Ripperdoc LucynaKushinada + OficinaRipperDoc E04 19:13
+
+DavidMartinez LucynaKushinada + Terraco E04 20:26
+
+DavidMartinez LucynaKushinada + Terraco E04 22:03
+
+# ===== EPISÓDIO 5 =====
+
+DavidMartinez Maine + QGMercenarios E05 04:40
+
+DavidMartinez Kiwi + QGMercenarios E05 04:40
+
+Maine Kiwi + QGMercenarios E05 04:40
+
+Maine DavidMartinez + QGMercenarios E05 05:35
+
+Maine LucynaKushinada + QGMercenarios E05 05:35
+
+Maine Kiwi + QGMercenarios E05 05:35
+
+Maine Dorio + QGMercenarios E05 05:35
+
+DavidMartinez LucynaKushinada + QGMercenarios E05 05:35
+
+DavidMartinez Kiwi + QGMercenarios E05 05:35
+
+DavidMartinez Dorio + QGMercenarios E05 05:35
+
+LucynaKushinada Kiwi + QGMercenarios E05 05:35
+
+LucynaKushinada Dorio + QGMercenarios E05 05:35
+
+Kiwi Dorio + QGMercenarios E05 05:35
+
+JK Maine - EstacionamentoPredio E05 07:16
+
+JK DavidMartinez - EstacionamentoPredio E05 07:16
+
+JK Kiwi - EstacionamentoPredio E05 07:16
+
+JK Dorio - EstacionamentoPredio E05 07:16
+
+LucynaKushinada Dorio + Rua E05 08:35
+
+JK DavidMartinez - CativeiroJK E05 11:13
+
+LucynaKushinada JK + CativeiroJK E05 14:48
+
+Dorio JK + CativeiroJK E05 14:48
+
+LucynaKushinada DavidMartinez + CativeiroJK E05 14:48
+
+Dorio DavidMartinez + CativeiroJK E05 14:48
+
+DronesArmados LucynaKushinada - CativeiroJK E05 14:48
+
+DronesArmados Dorio - CativeiroJK E05 14:48
+
+DavidMartinez Maine + QGMercenarios E05 17:01
+
+DavidMartinez JK + QGMercenarios E05 17:01
+
+Maine JK + QGMercenarios E05 17:01
+
+DavidMartinez SrTanaka + SalaApresentacao E05 19:02
+
+Maine SrTanaka + SalaApresentacao E05 19:02
+
+Dorio SrTanaka + SalaApresentacao E05 19:02
+
+JK SrTanaka + SalaApresentacao E05 19:02
+
+# ===== EPISÓDIO 6 =====
+
+Maine Dorio - QGMercenarios E06 02:30
+
+Maine Kiwi - QGMercenarios E06 03:38
+
+Falco Maine - QGMercenarios E06 03:54
+
+DavidMartinez Dorio + QGMercenarios E06 04:24
+
+DavidMartinez Maine + QGMercenarios E06 04:24
+
+LucynaKushinada Dorio + QGMercenarios E06 04:24
+
+LucynaKushinada Maine + QGMercenarios E06 04:24
+
+DavidMartinez Maine - QGMercenarios E06 05:11
+
+LucynaKushinada Dorio - QGMercenarios E06 06:26
+
+DavidMartinez LucynaKushinada + QGMercenarios E06 07:18
+
+LucynaKushinada Dorio + QGMercenarios E06 07:35
+
+Faraday Maine - QGMercenarios E06 09:33
+
+SrTanaka DavidMartinez - QGMercenarios E06 11:29
+
+DavidMartinez Maine - QGMercenarios E06 13:20
+
+DavidMartinez Dorio - QGMercenarios E06 13:20
+
+DavidMartinez LucynaKushinada - QGMercenarios E06 13:20
+
+DavidMartinez LucynaKushinada - EstacionamentoPredio E06 15:33
+
+Maine Dorio + QGMercenarios E06 16:05
+
+Tiras Maine - QGMercenarios E06 16:05
+
+Tiras Dorio - QGMercenarios E06 16:05
+
+EquipeMedicaMilitar Maine - QGMercenarios E06 16:05
+
+EquipeMedicaMilitar Dorio - QGMercenarios E06 16:05
+
+Maine Dorio - QGMercenarios E06 18:31
+
+Maine Tiras + QGMercenarios E06 19:19
+
+Maine EquipeMedicaMilitar + QGMercenarios E06 19:19
+
+DavidMartinez Maine - QGMercenarios E06 21:23
+
+MaxTac Maine - QGMercenarios E06 22:49
+
+# ===== EPISÓDIO 7 =====
+
+DavidMartinez Julio + Van E07 00:54
+
+Rebecca Julio + Van E07 00:54
+
+DavidMartinez Rebecca + BaseInimiga E07 03:14
+
+DavidMartinez Julio + BaseInimiga E07 03:14
+
+Rebecca Julio + BaseInimiga E07 03:14
+
+DavidMartinez InimigosGangue + BaseInimiga E07 03:14
+
+Rebecca InimigosGangue + BaseInimiga E07 03:14
+
+Julio InimigosGangue + BaseInimiga E07 03:14
+
+DavidMartinez ChefeGangue + BaseInimiga E07 05:26
+
+DavidMartinez Sequestrado + BaseInimiga E07 06:28
+
+DavidMartinez Wakako + Rua E07 06:28
+
+Falco DavidMartinez + Rua E07 07:59
+
+Falco Kiwi + Rua E07 07:59
+
+DavidMartinez Ripperdoc + OficinaRipperDoc E07 10:26
+
+Kiwi DavidMartinez 0 Afterlife E07 11:46
+
+DavidMartinez Faraday 0 Afterlife E07 11:46
+
+Kiwi Faraday 0 Afterlife E07 11:46
+
+DavidMartinez LucynaKushinada + ForaDaCidade E07 16:57
+
+# ===== EPISÓDIO 8 =====
+
+Faraday Militech - Estacionamento E08 06:08
+
+Faraday Militech 0 Lanchonete E08 08:17
+
+Rebecca DavidMartinez + CampoAberto E08 11:23
+
+Rebecca InimigosCampoAberto + CampoAberto E08 11:23
+
+DavidMartinez InimigosCampoAberto + CampoAberto E08 11:23
+
+Rebecca DavidMartinez + Rua E08 12:39
+
+LucynaKushinada DavidMartinez + ApartamentoDavid E08 16:23
+
+DavidMartinez Ripperdoc - OficinaRipperDoc E08 17:31
+
+LucynaKushinada DavidMartinez - Rua E08 18:47
+
+Faraday LucynaKushinada - Rua E08 22:13
+
+Kiwi LucynaKushinada - Rua E08 22:13
+
+# ===== EPISÓDIO 9 =====
+
+Faraday Kiwi - ApartamentoFaraday E09 04:08
+
+DavidMartinez Falco + QGMercenarios E09 05:57
+
+DavidMartinez Rebecca + QGMercenarios E09 05:57
+
+DavidMartinez Kiwi + QGMercenarios E09 05:57
+
+Falco Rebecca + QGMercenarios E09 05:57
+
+Falco Kiwi + QGMercenarios E09 05:57
+
+Rebecca Kiwi + QGMercenarios E09 05:57
+
+Rebecca DavidMartinez + Carro E09 07:48
+
+DavidMartinez Rebecca 0 Deserto E09 13:46
+
+DavidMartinez Falco 0 Deserto E09 13:46
+
+DavidMartinez Kiwi 0 Deserto E09 13:46
+
+Rebecca Falco 0 Deserto E09 13:46
+
+Rebecca Kiwi 0 Deserto E09 13:46
+
+Falco Kiwi 0 Deserto E09 13:46
+
+Faraday DavidMartinez - Deserto E09 15:56
+
+Rebecca DavidMartinez 0 Deserto E09 17:02
+
+Kiwi Falco 0 Deserto E09 17:02
+
+Kiwi Falco - Deserto E09 17:30
+
+LucynaKushinada DavidMartinez + Deserto E09 18:43
+
+Faraday LucynaKushinada - LocalNaoIdentificado E09 18:43
+
+ExercitoMilitech Rebecca - Deserto E09 20:34
+
+ExercitoMilitech Falco - Deserto E09 20:34
+
+DavidMartinez ExercitoMilitech + Deserto E09 20:34
+
+# ===== EPISÓDIO 10 =====
+
+Rebecca Falco 0 Rua E10 02:12
+
+DavidMartinez ExercitoMilitech + Rua E10 06:02
+
+Rebecca DavidMartinez + Rua E10 07:47
+
+Faraday Kiwi - LocalNaoIdentificado E10 08:48
+
+Kiwi Falco + LocalNaoIdentificado E10 11:47
+
+OficialArasaka AdamSmasher - TorreArasaka E10 14:06
+
+DavidMartinez LucynaKushinada + TorreArasaka E10 14:35
+
+DavidMartinez AgentesArasaka + TorreArasaka E10 14:35
+
+DavidMartinez Faraday + TorreArasaka E10 14:35
+
+AdamSmasher DavidMartinez - TorreArasaka E10 17:25
+
+LucynaKushinada DavidMartinez + TorreArasaka E10 17:56
+
+Falco DavidMartinez + PatioTorreArasaka E10 20:12
+
+Rebecca LucynaKushinada + PatioTorreArasaka E10 20:12
+
+AdamSmasher Rebecca - PatioTorreArasaka E10 20:21
+
+AdamSmasher DavidMartinez - PatioTorreArasaka E10 20:21
+
+AdamSmasher DavidMartinez - SubsoloPatioArasaka E10 21:13
+
+Falco LucynaKushinada + PatioTorreArasaka E10 21:38
+
+AdamSmasher DavidMartinez - SubsoloPatioArasaka E10 21:56
+
+Falco LucynaKushinada + PatioTorreArasaka E10 22:12
+
+AdamSmasher DavidMartinez - SubsoloPatioArasaka E10 23:31
