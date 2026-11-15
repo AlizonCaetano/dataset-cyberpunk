@@ -1,0 +1,4 @@
+ANÁLISE 5. Componentes conexos e o papel do David
+rede global: 1 componente(s), o maior com 37 personagens
+rede sem o David: 7 componentes, o maior com 30 personagens
+ficam isolados (6): Aldo, Chefe da gangue, Katsuo, Médico, Sequestrado, Wakako

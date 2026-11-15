@@ -1,0 +1,38 @@
+ANÁLISE 4. Centralidade de proximidade
+David                     0.800
+Maine                     0.590
+Lucy                      0.562
+Rebecca                   0.545
+Kiwi                      0.545
+Dorio                     0.537
+JK                        0.514
+Falco                     0.514
+Faraday                   0.507
+Sr. Tanaka                0.500
+Assassino                 0.493
+Trauma Team               0.493
+Glória                    0.486
+Cyberpsicopata (ep. 4)    0.474
+Pilar                     0.474
+Inimigos (assalto)        0.468
+Adam Smasher              0.468
+Militech                  0.462
+Inimigos (gangue)         0.462
+Julio                     0.462
+Ripperdoc                 0.462
+Diretor                   0.456
+Inimigos (campo)          0.456
+Maxim                     0.456
+Agentes Arasaka           0.456
+Aldo                      0.450
+Médico                    0.450
+Wakako                    0.450
+Katsuo                    0.450
+Chefe da gangue           0.450
+Sequestrado               0.450
+MAX-TAC                   0.391
+Tiras                     0.383
+Drones                    0.379
+Oficial Arasaka           0.321
+Cyberpsicopata (ep. 1)    0.288
+Segurança Arasaka         0.225

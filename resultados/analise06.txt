@@ -1,0 +1,18 @@
+ANÁLISE 6. Detecção de comunidades
+modularidade (Louvain, seed 42): 0.167
+comunidade 1 (14): Adam Smasher, Aldo, Assassino, Chefe da gangue, David, Diretor, Glória, Katsuo, Lucy, Médico, Oficial Arasaka, Ripperdoc, Sequestrado, Wakako
+comunidade 2 (11): Cyberpsicopata (ep. 4), Falco, Inimigos (assalto), Inimigos (campo), Inimigos (gangue), Julio, Kiwi, Maxim, Militech, Pilar, Rebecca
+comunidade 3 (7): Dorio, Drones, JK, Maine, Sr. Tanaka, Tiras, Trauma Team
+comunidade 4 (3): Cyberpsicopata (ep. 1), MAX-TAC, Segurança Arasaka
+comunidade 5 (2): Agentes Arasaka, Faraday
+
+modularidade em 100 execuções: de 0.149 a 0.167
+vezes em que o par caiu na mesma comunidade, em 100 execuções:
+  Faraday e Kiwi: 25
+  Faraday e Agentes Arasaka: 100
+  Maine e Dorio: 100
+  David e Lucy: 100
+  Kiwi e Rebecca: 92
+  David e Maine: 27
+
+comunidade do Faraday no algoritmo guloso: Agentes Arasaka, Faraday

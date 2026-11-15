@@ -1,0 +1,14 @@
+ANÁLISE 2. Personagens mais conectados
+              grau  grau_ponderado
+David           30             116
+Lucy            12              42
+Maine           13              40
+Rebecca         13              29
+Kiwi            10              29
+Dorio            9              23
+Falco            6              17
+Faraday          5              12
+JK               6              10
+Pilar            5               8
+Ripperdoc        2               8
+Adam Smasher     3               7

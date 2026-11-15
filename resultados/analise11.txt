@@ -1,0 +1,14 @@
+ANÁLISE 11. Equilíbrio estrutural da rede com sinal
+pares com sinal líquido definido: 73 (45 positivos, 28 negativos)
+pares neutros, fora da análise: 11
+triângulos: 45, equilibrados: 37 (82%)
+
+triângulos desequilibrados:
+  David, Maine, Assassino
+  David, Maine, Falco
+  David, Lucy, JK
+  David, Rebecca, Militech
+  David, Falco, Militech
+  Maine, Lucy, Assassino
+  Maine, Lucy, Falco
+  Maine, Kiwi, Falco

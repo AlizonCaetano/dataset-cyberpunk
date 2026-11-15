@@ -1,0 +1,33 @@
+ANÁLISE 8. Comparação entre sinais
+registros por sinal na temporada:
+sinal
++    122
+-     68
+0     15
+
+registros por episódio e sinal:
+sinal      +   -  0
+episodio           
+E01        3  11  1
+E02        5   4  0
+E03       14   4  0
+E04       26   5  1
+E05       25   7  0
+E06        9  18  0
+E07       15   0  3
+E08        5   5  1
+E09        9   6  8
+E10       11   8  1
+
+interações positivas e negativas por personagem (10 com mais negativas):
+                        positivas  negativas
+David                          77         32
+Maine                          24         15
+Lucy                           31         11
+Dorio                          14          8
+Faraday                         1          8
+Adam Smasher                    0          7
+Kiwi                           17          6
+Cyberpsicopata (ep. 4)          1          5
+JK                              5          5
+Trauma Team                     1          4

@@ -1,0 +1,20 @@
+ANÁLISE 12. A absorção do David pela equipe e a troca de liderança
+          interacoes_David  com_equipe  proporcao_equipe
+episodio                                                
+E01                     11           0              0.00
+E02                      9           5              0.56
+E03                     13          10              0.77
+E04                     19          15              0.79
+E05                     13           9              0.69
+E06                     10           9              0.90
+E07                     12           6              0.50
+E08                      6           4              0.67
+E09                     11           9              0.82
+E10                     12           4              0.33
+
+episódios 1 a 5: 25 personagens, David em 65 de 106 registros
+  maiores graus ponderados: David 65, Maine 24, Lucy 23, Kiwi 13, Dorio 13
+  maiores intermediações:   David 0.49, Maine 0.09, Lucy 0.07, Dorio 0.03, Kiwi 0.03
+episódios 6 a 10: 23 personagens, David em 51 de 99 registros
+  maiores graus ponderados: David 51, Rebecca 20, Lucy 19, Falco 17, Maine 16
+  maiores intermediações:   David 0.69, Maine 0.19, Adam Smasher 0.09, Rebecca 0.06, Dorio 0.06

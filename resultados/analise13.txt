@@ -1,0 +1,23 @@
+ANÁLISE 13. O peso de cada perda na rede
+                 cena  intermediacao componentes maior_componente                                                    perdem a ligação
+personagem                                                                                                                           
+Glória      E01 18:54           0.24      2 -> 4           8 -> 5                                                      Diretor, Maine
+Pilar       E04 15:52           0.08      2 -> 3         19 -> 17                                              Cyberpsicopata (ep. 4)
+Dorio       E06 18:31           0.06      2 -> 2         24 -> 23                                                                   -
+Maine       E06 22:49           0.40      1 -> 4         27 -> 21  Cyberpsicopata (ep. 1), Falco, Faraday, MAX-TAC, Segurança Arasaka
+Rebecca     E10 20:21           0.06      1 -> 1         37 -> 36                                                                   -
+David       E10 23:31           0.67      1 -> 7         37 -> 30          Aldo, Chefe da gangue, Katsuo, Médico, Sequestrado, Wakako
+
+interações dentro da equipe por episódio e sinal:
+sinal      +   -  0
+episodio           
+E01        0   0  0
+E02        3   2  0
+E03       10   1  0
+E04       19   0  1
+E05       17   0  0
+E06        7  11  0
+E07        8   0  1
+E08        3   2  0
+E09        8   1  8
+E10        8   0  1

@@ -29,7 +29,7 @@
 #
 # DICIONÁRIO DE PERSONAGENS
 #   formato: # PERSONAGEM id | nome_canonico | apelidos (separados por ;) | primeira_aparicao
-# PERSONAGEM CyberpsicopataEp1 | Cyberpsicopata do episódio 1 |  | E01 00:32
+# PERSONAGEM CyberpsicopataEp1 | Cyberpsicopata do episódio 1, militar renomado |  | E01 00:32
 # PERSONAGEM SegurancaArasaka | Segurança da Arasaka |  | E01 00:32
 # PERSONAGEM MaxTac | MAX-TAC |  | E01 02:06
 # PERSONAGEM DavidMartinez | David Martinez | David | E01 03:15
@@ -38,10 +38,9 @@
 # PERSONAGEM Maine | Maine |  | E01 05:36
 # PERSONAGEM Katsuo | Katsuo Tanaka | Katsuo;Katsu | E01 08:57
 # PERSONAGEM DiretorAcademia | Diretor da Academia Arasaka |  | E01 09:16
-# PERSONAGEM EquipeMedicaPrivada | Equipe médica privada |  | E01 13:00
+# PERSONAGEM TraumaTeam | Trauma Team | Equipe médica;Paramédicos;Equipe médica militar | E01 13:00
 # PERSONAGEM MedicoHospital | Médico do hospital |  | E01 13:47
 # PERSONAGEM LucynaKushinada | Lucyna Kushinada | Lucy;Lucyna;Kushinada | E02 07:36
-# PERSONAGEM ParamedicosCorruptos | Paramédicos corruptos da ambulância |  | E02 11:03
 # PERSONAGEM Dorio | Dorio |  | E03 08:19
 # PERSONAGEM Pilar | Pilar |  | E03 08:19
 # PERSONAGEM Kiwi | Kiwi |  | E03 08:19
@@ -51,24 +50,22 @@
 # PERSONAGEM Faraday | Faraday |  | E03 18:44
 # PERSONAGEM Aldo | Aldo |  | E04 03:51
 # PERSONAGEM InimigosAssalto | Inimigos do assalto na clínica |  | E04 07:39
-# PERSONAGEM Desconhecido | Desconhecido armado que mata Pilar |  | E04 15:10
-# PERSONAGEM JK | JK |  | E05 07:16
+# PERSONAGEM CyberpsicopataEp4 | Cyberpsicopata que mata Pilar |  | E04 15:10
+# PERSONAGEM JK | Jimmy Kurosaki | JK | E05 07:16
 # PERSONAGEM DronesArmados | Drones armados |  | E05 14:48
 # PERSONAGEM SrTanaka | Sr. Tanaka |  | E05 19:02
 # PERSONAGEM Falco | Falco |  | E06 03:54
 # PERSONAGEM Tiras | Tiras (polícia) |  | E06 16:05
-# PERSONAGEM EquipeMedicaMilitar | Equipe médica militar |  | E06 16:05
 # PERSONAGEM Julio | Julio |  | E07 00:54
 # PERSONAGEM InimigosGangue | Inimigos da gangue rival |  | E07 03:14
 # PERSONAGEM ChefeGangue | Chefe da gangue rival |  | E07 05:26
 # PERSONAGEM Sequestrado | Pessoa sequestrada resgatada por David |  | E07 06:28
 # PERSONAGEM Wakako | Wakako |  | E07 06:28
-# PERSONAGEM Militech | Representante da Militech |  | E08 06:08
+# PERSONAGEM AgentesArasaka | Agentes da Arasaka | Capangas contratados pela Arasaka;Contato da Arasaka | E08 06:08
 # PERSONAGEM InimigosCampoAberto | Inimigos do confronto em campo aberto |  | E08 11:23
-# PERSONAGEM ExercitoMilitech | Exército da Militech |  | E09 20:34
+# PERSONAGEM Militech | Militech | Exército da Militech | E09 20:34
 # PERSONAGEM AdamSmasher | Adam Smasher | Smasher;Adam | E10 14:06
 # PERSONAGEM OficialArasaka | Oficial de alto escalão da Arasaka |  | E10 14:06
-# PERSONAGEM AgentesArasaka | Agentes da Arasaka |  | E10 14:35
 
 # ===== EPISÓDIO 1 =====
 
@@ -86,7 +83,7 @@ Katsuo DavidMartinez - AcademiaArasaka E01 08:57
 
 GloriaMartinez DiretorAcademia - AcademiaArasaka E01 09:16
 
-EquipeMedicaPrivada DavidMartinez - Rodovia E01 13:00
+TraumaTeam DavidMartinez - Rodovia E01 13:00
 
 MedicoHospital DavidMartinez - Hospital E01 13:47
 
@@ -108,11 +105,13 @@ DavidMartinez Ripperdoc + OficinaRipperDoc E02 00:10
 
 DavidMartinez Katsuo + AcademiaArasaka E02 02:56
 
+DiretorAcademia DavidMartinez - ApartamentoDavid E02 05:55
+
 DavidMartinez LucynaKushinada + Trem E02 07:36
 
 LucynaKushinada DavidMartinez + Ambulancia E02 11:03
 
-ParamedicosCorruptos DavidMartinez - Ambulancia E02 11:03
+TraumaTeam DavidMartinez - Ambulancia E02 11:03
 
 LucynaKushinada DavidMartinez + Rua E02 12:23
 
@@ -156,6 +155,8 @@ Faraday Maine - Rua E03 18:44
 
 Maine DavidMartinez + Rua E03 20:26
 
+DiretorAcademia DavidMartinez + Rua E03 21:44
+
 # ===== EPISÓDIO 4 =====
 
 Maine Dorio 0 Bar E04 02:43
@@ -194,23 +195,23 @@ Pilar InimigosAssalto + ClinicaAssalto E04 07:39
 
 DavidMartinez Rebecca + Bar E04 08:32
 
-Pilar Desconhecido - Rua E04 15:10
+Pilar CyberpsicopataEp4 - Rua E04 15:10
 
-Desconhecido Pilar - Rua E04 15:52
+CyberpsicopataEp4 Pilar - Rua E04 15:52
 
-Desconhecido DavidMartinez - Rua E04 16:42
+CyberpsicopataEp4 DavidMartinez - Rua E04 16:42
 
 Maine DavidMartinez + Rua E04 16:42
 
-Rebecca Desconhecido - Rua E04 16:42
+Rebecca CyberpsicopataEp4 - Rua E04 16:42
 
 Kiwi Rebecca + Rua E04 16:42
 
-LucynaKushinada Desconhecido - Rua E04 16:42
+LucynaKushinada CyberpsicopataEp4 - Rua E04 16:42
 
 DavidMartinez LucynaKushinada + Rua E04 16:42
 
-DavidMartinez Desconhecido + Rua E04 17:52
+DavidMartinez CyberpsicopataEp4 + Rua E04 17:52
 
 DavidMartinez LucynaKushinada + Rua E04 17:52
 
@@ -330,15 +331,15 @@ Tiras Maine - QGMercenarios E06 16:05
 
 Tiras Dorio - QGMercenarios E06 16:05
 
-EquipeMedicaMilitar Maine - QGMercenarios E06 16:05
+TraumaTeam Maine - QGMercenarios E06 16:05
 
-EquipeMedicaMilitar Dorio - QGMercenarios E06 16:05
+TraumaTeam Dorio - QGMercenarios E06 16:05
 
 Maine Dorio - QGMercenarios E06 18:31
 
 Maine Tiras + QGMercenarios E06 19:19
 
-Maine EquipeMedicaMilitar + QGMercenarios E06 19:19
+Maine TraumaTeam + QGMercenarios E06 19:19
 
 DavidMartinez Maine - QGMercenarios E06 21:23
 
@@ -384,9 +385,9 @@ DavidMartinez LucynaKushinada + ForaDaCidade E07 16:57
 
 # ===== EPISÓDIO 8 =====
 
-Faraday Militech - Estacionamento E08 06:08
+Faraday AgentesArasaka - Estacionamento E08 06:08
 
-Faraday Militech 0 Lanchonete E08 08:17
+Faraday AgentesArasaka 0 Lanchonete E08 08:17
 
 Rebecca DavidMartinez + CampoAberto E08 11:23
 
@@ -448,17 +449,17 @@ LucynaKushinada DavidMartinez + Deserto E09 18:43
 
 Faraday LucynaKushinada - LocalNaoIdentificado E09 18:43
 
-ExercitoMilitech Rebecca - Deserto E09 20:34
+Militech Rebecca - Deserto E09 20:34
 
-ExercitoMilitech Falco - Deserto E09 20:34
+Militech Falco - Deserto E09 20:34
 
-DavidMartinez ExercitoMilitech + Deserto E09 20:34
+DavidMartinez Militech + Deserto E09 20:34
 
 # ===== EPISÓDIO 10 =====
 
 Rebecca Falco 0 Rua E10 02:12
 
-DavidMartinez ExercitoMilitech + Rua E10 06:02
+DavidMartinez Militech + Rua E10 06:02
 
 Rebecca DavidMartinez + Rua E10 07:47
 

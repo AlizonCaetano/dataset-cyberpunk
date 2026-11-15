@@ -1,0 +1,4 @@
+ANÁLISE 10. Distribuição dos graus
+personagens por grau (grau: quantidade):
+1: 8, 2: 9, 3: 7, 4: 3, 5: 2, 6: 2, 9: 1, 10: 1, 12: 1, 13: 2, 30: 1
+assortatividade de grau: -0.438

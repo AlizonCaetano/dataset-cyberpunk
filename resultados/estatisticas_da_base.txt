@@ -1,0 +1,61 @@
+ESTATÍSTICAS DESCRITIVAS DA BASE
+registros: 205
+personagens no dicionário: 37; com ao menos um registro: 37
+
+registros por sinal:
+sinal
++    122
+-     68
+0     15
+
+registros por episódio e sinal:
+sinal      +   -  0
+episodio           
+E01        3  11  1
+E02        5   4  0
+E03       14   4  0
+E04       26   5  1
+E05       25   7  0
+E06        9  18  0
+E07       15   0  3
+E08        5   5  1
+E09        9   6  8
+E10       11   8  1
+
+registros por ambiente:
+ambiente
+QGMercenarios              48
+Rua                        30
+Deserto                    14
+ClinicaAssalto             10
+ApartamentoDavid            9
+BaseInimiga                 8
+CativeiroJK                 7
+OficinaRipperDoc            6
+TorreArasaka                6
+PatioTorreArasaka           6
+Bar                         5
+PatioGalpao                 5
+EstacionamentoPredio        5
+Galpao                      4
+SalaApresentacao            4
+AcademiaArasaka             3
+ApartamentoLucy             3
+Afterlife                   3
+CampoAberto                 3
+LocalNaoIdentificado        3
+SubsoloPatioArasaka         3
+PatioArasaka                2
+Hospital                    2
+Ambulancia                  2
+ApartamentoPilarRebecca     2
+Terraco                     2
+Van                         2
+Rodovia                     1
+Trem                        1
+PatioEscondido              1
+ForaDaCidade                1
+Estacionamento              1
+Lanchonete                  1
+ApartamentoFaraday          1
+Carro                       1
